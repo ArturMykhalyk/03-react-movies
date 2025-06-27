@@ -6,10 +6,6 @@ import toast, { Toaster } from 'react-hot-toast';
 
 function App() {
   const handleSubmit = async (query: string) => {
-    if (query.trim().length === 0) {
-      toast.error('Please enter your search query.');
-      return;
-    }
     const movies: Movie[] = await fetchMovies(query);
     if (movies.length === 0) {
       toast.error('No movies found for your request.');
