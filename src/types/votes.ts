@@ -1,0 +1,1 @@
+export type VotesType = 'good' | 'neutral' | 'bad';
