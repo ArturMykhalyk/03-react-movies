@@ -48,7 +48,7 @@ function App() {
       {isLoading && <Loader />}
       {isError && <ErrorMessage />}
       {movies.length > 0 && (
-        <MovieGrid movies={movies} onMovieClick={handleMovieClick} />
+        <MovieGrid movies={movies} onSelect={handleMovieClick} />
       )}
       {selectedMovie && (
         <MovieModal onClose={closeModal} movie={selectedMovie} />

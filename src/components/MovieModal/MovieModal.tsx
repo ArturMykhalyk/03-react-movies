@@ -30,7 +30,14 @@ export function MovieModal({ onClose, movie }: MovieModalProps) {
     };
   }, [onClose]);
 
-  const { title, poster_path, overview, release_date, vote_average } = movie;
+  const {
+    title,
+    backdrop_path,
+    overview,
+    release_date,
+    vote_average,
+    poster_path,
+  } = movie;
   return createPortal(
     <div
       onClick={handleBackdropClick}
@@ -47,7 +54,11 @@ export function MovieModal({ onClose, movie }: MovieModalProps) {
           &times;
         </button>
         <img
-          src={`https://image.tmdb.org/t/p/original/${poster_path}}`}
+          src={
+            backdrop_path
+              ? `https://image.tmdb.org/t/p/original/${backdrop_path}`
+              : `https://image.tmdb.org/t/p/original/${poster_path}`
+          }
           alt={title}
           className={css.image}
         />
